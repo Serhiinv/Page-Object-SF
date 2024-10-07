@@ -10,4 +10,20 @@ public abstract class PageWithBase {
     public SFFooter getFooter() {
         return footer;
     }
+
+    private String email = "email";
+    private String password = "password";
+
+    public String getEmail() {
+        return email;
+    }
+
+    public SFHomePage signIN() {
+        var homePage = new SFHomePage()
+        .getHeader()
+                .openSignInPage()
+                .signIn(email, password);
+        return new SFHomePage();
+    }
+
 }

@@ -4,13 +4,9 @@ public class SFPhotoBookTest {
 
     @Test
     public void verifyCreateNautPBFromAlbumAndAddToCart() {
-        var email = "email";
-        var password = "password";
         var pibPage = new SFHomePage()
                 .openHomePage()
-                .getHeader()
-                .openSignInPage()
-                .signIn(email, password)
+                .signIN()
                 .getHeader()
                 .openPBCategory()
                 .select8x8PB()

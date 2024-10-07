@@ -1,5 +1,6 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
+import org.testng.Assert;
 
 public class SFSignInPage {
 
@@ -15,8 +16,9 @@ public class SFSignInPage {
     }
 
     public void verifyUserIsSignedOut() {
-        Selenide.$x("//*[@id='email']")
+       boolean isEmailFieldVisible = Selenide.$x("//*[@id='email']")
                 .is(Condition.visible);
+        Assert.assertTrue(isEmailFieldVisible);
     }
 
     public SFSignInPage verifyProjectsPageIsNotAvailable() {

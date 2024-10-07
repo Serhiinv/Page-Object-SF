@@ -4,16 +4,13 @@ public class SFSignInSignOutTest {
 
     @Test
     public void verifySignInWorks() {
-        var email = "email";
-        var password = "password";
-        var accountPage = new SFHomePage()
+        var homePage = new SFHomePage()
                 .openHomePage()
-                .getHeader()
-                .openSignInPage()
-                .signIn(email, password)
-                .getHeader()
+                .signIN();
+
+        var accountPage = homePage.getHeader()
                 .openAccountSettingsPage();
-        accountPage.verifyUserSignedInAs(email);
+        accountPage.verifyUserSignedInAs(homePage.getEmail());
     }
 
     @Test

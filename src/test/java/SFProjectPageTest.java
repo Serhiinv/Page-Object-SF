@@ -13,13 +13,9 @@ public class SFProjectPageTest {
 
     @Test
     public void verifyProjectPageForSignedInUser() {
-        var email = "email";
-        var password = "password";
         var projectPage = new SFHomePage()
                 .openHomePage()
-                .getHeader()
-                .openSignInPage()
-                .signIn(email, password)
+                .signIN()
                 .getHeader()
                 .openProjectsPageSignedInUser();
         projectPage.verifyMyProjectsPageIsOpen();
